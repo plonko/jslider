@@ -1,5 +1,5 @@
 /**
- * jquery.slider - Slider ui control in jQuery
+ * jquery.jrangeslider - Slider ui control in jQuery
  * 
  * Written by
  * Egor Khmelev (hmelyoff@gmail.com)
@@ -37,7 +37,7 @@
     return false;
   }
 
-	$.slider = function( node, settings ){
+	$.jrangeslider = function( node, settings ){
 	  var jNode = $(node);
 	  if( !jNode.data( "jslider" ) )
 	    jNode.data( "jslider", new jSlider( node, settings ) );
@@ -45,7 +45,7 @@
 	  return jNode.data( "jslider" );
 	};
 	
-	$.fn.slider = function( action, opt_value ){
+	$.fn.jrangeslider = function( action, opt_value ){
 	  var returnValue, args = arguments;
 	  
 	  function isDef( val ){
@@ -57,7 +57,7 @@
 	  };
 	  
 		this.each(function(){
-		  var self = $.slider( this, action );
+		  var self = $.jrangeslider( this, action );
 		  
 		  // do actions
 		  if( typeof action == "string" ){
@@ -142,7 +142,7 @@
 		  }
 		});
 		
-		// flatten array just with one slider
+		// flatten array just with one jrangeslider
 		if( isArray( returnValue ) && returnValue.length == 1 )
 		  returnValue = returnValue[ 0 ];
 		
